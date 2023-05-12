@@ -13,7 +13,6 @@ def Cleanup(type):
     else:
         os.chdir(os.path.dirname(os.path.abspath(__file__)))
         os.chdir("..")
-        print(os.getcwd())
         temp_exists = os.path.exists("Temp")
         load_exists = os.path.exists("Loaded")
         if temp_exists == True:

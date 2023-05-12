@@ -1,5 +1,6 @@
 # Import Modules.
 
+from Resources.about import Program_Info
 from Installer.restore import Restore
 from Resources.Boot import Opened
 if ImportError == True:
@@ -49,6 +50,28 @@ import datetime
 if ImportError == True:
     print("Failed to import module:",modulename)
     print("Bye!")
+
+# Present version Info
+
+print(Program_Info.name)
+if Program_Info.channel == "Beta" or "Dev" or "Nightly":
+    print("This is a installation of "+Program_Info.channel+"!")
+    print("Debug mode will be on by default.")
+    DebugMode = 1
+print("Version "+Program_Info.version)
+print("What's new:\n"+Program_Info.pdesc)
+print("Changelog:\n")
+rpt = 0
+for c in Program_Info.changelog:
+    if c == "Done":
+        print("Done.")
+    else:
+        print(c+"\n")
+    rpt = rpt+1
+    if rpt == 5:
+        print("...")
+        break
+rpt = 0
 
 # Check if program is runnning. (Only in Safe Mode.)
 
@@ -176,6 +199,7 @@ if DebugMode == True:
     logboot = open("boot.log","a")
     crt_time = datetime.datetime.now()
     logboot.write(str(crt_time)+": Booted successfully.\n")
+    print("Logged boot record to "+os.path.dirname(os.getcwd())+"/Logs")
     os.chdir("..")
     
 
