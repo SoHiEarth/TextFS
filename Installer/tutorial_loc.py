@@ -1,5 +1,6 @@
 def KORD():
     import os
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
     os.chdir("Installer")
     os.chdir("Tanks")
     CORD_content_open = open("KORD.txt","r")
@@ -10,6 +11,8 @@ def KORD():
     write.write(CORD_content)
 def KLAX():
     import os
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+    os.chdir("..")
     os.chdir("Installer")
     os.chdir("Tanks")
     CORD_content_open = open("KLAX.txt","r")

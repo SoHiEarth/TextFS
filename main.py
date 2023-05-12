@@ -93,6 +93,7 @@ if SafeMode == 1:
 # Check if the Aircraft dir and Locations dir exist.
 # If not, make it.
 
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 craft_exists = os.path.exists("Aircraft")
 loc_exists = os.path.exists("Locations")
 if craft_exists == False:
@@ -163,7 +164,7 @@ tskmgr.display("init")
 # Scan aircraft and locations
 
 from Resources.World.process import Process
-Process.scan()
+Process.scan("quiet")
 
 # Start second bootlevel
 
@@ -210,10 +211,15 @@ elapsed = endboot - startboot
 print("Took "+ str(elapsed) +" seconds to boot.")
 print("Ended boot.")
 
-#Mode
+# List aircraft and locations
+Process.scan("")
 
-print("This is all for a0.0.1, a0.0.11 will come with many new features!")
+# Choose aircraft and location
+
+tc=input("Choose your aircraft: ")
+tl=input("Choose your location: ")
+Process.Move(tc,tl)
 
 # Start cleaning up and begin shutdown.
 
-Cleanup("")
+#Cleanup("")
