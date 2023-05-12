@@ -167,10 +167,16 @@ if DebugMode == 1:
 
 #If debugmode is on, log.
 
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 if DebugMode == True:
     log_exists = os.path.exists("Logs")
     if log_exists == False:
         os.mkdir("Logs")
+    os.chdir("Logs")
+    logboot = open("boot.log","a")
+    crt_time = datetime.datetime.now()
+    logboot.write(str(crt_time)+": Booted successfully.\n")
+    os.chdir("..")
     
 
 # End boot
