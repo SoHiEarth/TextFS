@@ -6,8 +6,13 @@ if ImportError == True:
     Restore.Restore_Boot(0)
     from Resources.Boot import Opened
 from Resources.ec import ec
+from Resources.cleanup import Cleanup
 from Resources.setting import SafeMode
 from Resources.setting import DebugMode
+
+#Partial cleanup to remove unwanted files.
+
+Cleanup("Partial")
 
 modulename = "time"
 import time
@@ -123,7 +128,7 @@ if Opened == 0:
 # Start main bootlevel
 
 print("Initializing...")
-startboot = datetime.datetime.now()
+startboot = time.time()
 print("Starting main bootlevel")
 
 # Start task manager
@@ -151,16 +156,26 @@ if Temp_Exists == False:
     os.mkdir("Temp")
 if Loaded_Exists == False:
     os.mkdir("Loaded")
-tskmgr.display("init")
+tskmgr.display("")
 
 # Accept debugmode
 
+dbg = False
 if DebugMode == 1:
     "Debug Mode is locked and loaded."
+    dbg = True
+
+#If debugmode is on, log.
+
+if DebugMode == True:
+    log_exists = os.path.exists("Logs")
+    if log_exists == False:
+        os.mkdir("Logs")
+    
 
 # End boot
 
-endboot = datetime.datetime.now()
+endboot = time.time()
 elapsed = endboot - startboot
 print("Took "+ str(elapsed) +" seconds to boot.")
 print("Ended boot.")
@@ -168,3 +183,7 @@ print("Ended boot.")
 #Mode
 
 print("This is all for a0.0.1, a0.0.11 will come with many new features!")
+
+# Start cleaning up and begin shutdown.
+
+Cleanup("")
