@@ -23,6 +23,8 @@ def KLAX():
     write.write(CORD_content)
 def blank():
     import os
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+    os.chdir("..")
     os.chdir("Installer")
     os.chdir("Tanks")
     blank_content_open = open("blank.txt","r")
