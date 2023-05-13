@@ -13,7 +13,7 @@ This is a self maintained project by SoHiEarth, and was started on May 10th, 202
 
 ## RELEASES
 There are **3** channels.
-```
+
 **Stable** - Stable is equipped with the most stable version of TextFS. This may get the least updates (excluding stablitity and bug fixes) and features,
          as it is supposed to be the most stable and the "Long Term Support" version of TextFS.
 ### Latest Release for **Stable**
@@ -25,7 +25,7 @@ There are **3** channels.
 **Nightly** - This is the bleeding edge of in-development TextFS versions. It is not meant to be stable, and critical errors and bugs.
           Still, this is the one with the most feature updates and cool new stuff. If you like new stuff, try using this.
           Though, I recommend that you have a different more stable version of TextFS if you don't like seeing error messages and crashes.
-```
+
 
 ## IMPLEMENTATIONS
 If you would like to use TextFS into your program, just have a license.txt file that has the following text, and feel free to customize TextFS, or just use it plainly as a engine.
