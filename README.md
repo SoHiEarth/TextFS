@@ -1,4 +1,4 @@
-# TextFS-b0.0.1
+# TextFS
 ## Purpose
 This is a little **Python**-made program that doesn't use graphics since I don't know how to.
 This program can take data from a user-imported aircraft file and a location file.
