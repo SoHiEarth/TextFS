@@ -39,11 +39,11 @@ Thanks, we don't take any royalties.
 
 ## Installation
 **Program is not finished**
-cd into the folder and then start main.py with\
+cd into the folder and then start main.py with
 ```
 python3 -m main.py
 ```
-You will need Python 3.9 or higher.\
+You will need Python 3.9 or higher.
 
 ## Features that aren't Implemented **Yet**
 Main gameplay, output, shutdown stage.
