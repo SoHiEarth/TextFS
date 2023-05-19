@@ -1,6 +1,7 @@
 
 # Import Modules.
 
+from Resources.virt import virt
 from Resources.about import Program_Info
 from Installer.restore import Restore
 from Resources.Boot import Opened
@@ -259,6 +260,11 @@ for craft in aircraft_content:
             placec.close()
 
             break
+
+# Start virtual world.
+virt.Read()
+virt.start()
+
 
 # Start cleaning up and begin shutdown.
 
