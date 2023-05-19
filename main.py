@@ -55,7 +55,7 @@ if ImportError == True:
 # Present version Info
 
 print(Program_Info.name)
-if Program_Info.channel == "Beta" or "Dev" or "Nightly":
+if Program_Info.channel == "Beta" or "Nightly":
     print("This is a installation of "+Program_Info.channel+"!")
     print("Debug mode will be on by default.")
     DebugMode = 1
@@ -263,6 +263,7 @@ for craft in aircraft_content:
 # Start cleaning up and begin shutdown.
 
 Cleanup("")
+
 
 # Shutdown
 
