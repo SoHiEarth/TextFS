@@ -260,6 +260,13 @@ for craft in aircraft_content:
 
             break
 
+# Start virtual world initializations
+
+print("Initializiing virt.py...")
+
+# Import physics library(Required for virt.py)
+from Resources.Physic.PhysicsLibrary import World
+
 # Start cleaning up and begin shutdown.
 
 Cleanup("")
