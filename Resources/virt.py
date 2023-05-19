@@ -5,7 +5,7 @@ class virt:
         # Declare write data as a single variable
         outputData = "PositionX = "+posX+"\nPositionY = "+posY+"\nPositionZ = "+posZ+"\nRotationX = "+rotX+"\nRotationY = "+rotY+"\nRotationZ = "+rotZ+"\nAirspeed = "+aspd+"\nGroundspeed = "+gspd+"\nThrottle = "+enginePower+"\nVerticalSpeed = "+enginePower
         # Change cwd
-        os.chdir(os.path.abspath(__file__))
+        os.chdir(os.path.abspath(os.path.dirname(__file__)))
         os.chdir("..")
         direCheck = os.path.exists("Output")
         if direCheck == False:
@@ -19,7 +19,7 @@ class virt:
 
     def start():
         import os
-        os.chdir(os.path.abspath(__file__))
+        os.chdir(os.path.abspath(os.path.dirname(__file__)))
         os.chdir("..")
         print("Loading assets")
         loaded_exists = os.path.exists("Loaded")
@@ -29,12 +29,11 @@ class virt:
             print("Loaded assets are missing. Try again.")
         os.mkdir("Output")
 
-    def MainGame
 
     class Read:
         def sread():
             import os
-            os.chdir(os.path.dirname(os.path.abspath(__file__)))
+            os.chdir(os.path.abspath(os.path.dirname(__file__)))
             os.chdir("..")
             load_exists = os.path.exists("Loaded")
             if load_exists == False:

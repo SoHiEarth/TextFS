@@ -18,7 +18,7 @@ class tskmgr:
         if loaded_exists == True:
             loadedsize = os.path.getsize("Loaded")
         os.chdir("..")
-        FSsize = os.path.getsize("TextFS a0.0.1")
+        FSsize = os.path.getsize("TextFS")
  
     def refresh():
         import os
@@ -36,7 +36,7 @@ class tskmgr:
         if loaded_exists == True:
             loadedsize = os.path.getsize("Loaded")
         os.chdir("..")
-        FSsize = os.path.getsize("TextFS a0.0.1")
+        FSsize = os.path.getsize("TextFS")
  
     def display(state):
         import os
@@ -54,7 +54,7 @@ class tskmgr:
         if loaded_exists == True:
             loadedsize = os.path.getsize("Loaded")
         os.chdir("..")
-        FSsize = os.path.getsize("TextFS a0.0.1")
+        FSsize = os.path.getsize("TextFS")
         print("Disk Usage:")
         print("Main.py usage: " + str(mainsize))
         if state == "init":
