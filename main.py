@@ -114,7 +114,7 @@ else:
 
 # Ask for tutorial setup, only if the program is on first startup.
 
-os.chdir("..")
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 if Opened == 0:
     mktutorial = input("Do you want to install tutorials? [\"Y\",\"N\"]")
     if mktutorial == "Y":
@@ -226,6 +226,7 @@ tl=input("Choose your location: ")
 # Move data to Loaded
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
+os.chdir("Resources")
 aircraft_content = os.listdir("Aircraft")
 os.chdir("Aircraft")
 for craft in aircraft_content:
@@ -263,6 +264,7 @@ for craft in aircraft_content:
 # Start virtual world.
 virt.Read()
 virt.start()
+virt.main()
 
 
 # Start cleaning up and begin shutdown.

@@ -17,6 +17,8 @@ class virt:
         if last == True:
             outFile.close()
 
+# Start function
+
     def start():
         import os
         os.chdir(os.path.abspath(os.path.dirname(__file__)))
@@ -27,9 +29,13 @@ class virt:
             pass
         else:
             print("Loaded assets are missing. Try again.")
-            
 
+# Main game loop
 
+    def main():
+        
+
+# Read
     class Read:
         def sread():
             import os
