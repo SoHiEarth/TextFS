@@ -27,7 +27,7 @@ class virt:
             pass
         else:
             print("Loaded assets are missing. Try again.")
-        os.mkdir("Output")
+            
 
 
     class Read:

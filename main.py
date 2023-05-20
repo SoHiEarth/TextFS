@@ -174,15 +174,14 @@ print("Starting second bootlevel")
 
 # Create temp & loaded files
 
-csd = os.path.dirname(os.path.abspath(__file__))
-os.chdir(csd)
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 Temp_Exists = os.path.exists("Temp")
 Loaded_Exists = os.path.exists("Loaded")
 if Temp_Exists == False:
     os.mkdir("Temp")
 if Loaded_Exists == False:
     os.mkdir("Loaded")
-tskmgr.display("")
+os.path.dirname(os.path.abspath(__file__))
 
 # Accept debugmode
 

@@ -22,7 +22,7 @@ class Data:
     EngineCompany = "General Electric"
     EngineModel = "GE90-110B1"
     #kilonewtons
-    EnginePower = "400"
+    EnginePower = 400
     #Knots
     MaxSpd = 513
     #Service Ceiling

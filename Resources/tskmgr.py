@@ -1,6 +1,4 @@
 class tskmgr:
-    mainsize = 0
-    FSsize = 0
     
     def start():
         import os
@@ -32,13 +30,14 @@ class tskmgr:
         if temp_exists == True:
             tempsize = os.path.getsize("Temp")
         loaded_exists = os.path.exists("Loaded")
-        loadedsize = 0
         if loaded_exists == True:
             loadedsize = os.path.getsize("Loaded")
         os.chdir("..")
         FSsize = os.path.getsize("TextFS")
- 
-    def display(state):
+        if loadedsize > 500000000:
+            print("WARNING: LOADED ASSETS ARE OVER 5GB.")
+
+    def display(state="Normal"):
         import os
         from Resources.setting import DebugMode
         script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -56,10 +55,17 @@ class tskmgr:
         os.chdir("..")
         FSsize = os.path.getsize("TextFS")
         print("Disk Usage:")
-        print("Main.py usage: " + str(mainsize))
         if state == "init":
             print("Flight Simulator usage (Before load):", str(FSsize))
-        else:
+            print("Main.py usage: " + str(mainsize))
+        if state == "Normal":
             print("Flight Simulator usage:",str(FSsize))
-        print("Temp directory size: "+ str(tempsize))
-        print("Loaded assets size: "+ str(loadedsize))
+            if DebugMode == True:
+                print("Temp directory size: "+ str(tempsize))
+                print("Loaded assets size: "+ str(loadedsize))
+        if state == "ingame":
+            print("Flight Simulator usage",str(FSsize))
+            print("Main.py usage: " + str(mainsize))
+            if DebugMode == True:
+                print("Temp directory size: "+ str(tempsize))
+                print("Loaded assets size: "+ str(loadedsize))
