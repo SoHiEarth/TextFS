@@ -32,6 +32,8 @@ There are **3** channels.\
 
 ## Implementations
 If you would like to use TextFS into your program, just have a license.txt file that has the following text, and feel free to customize TextFS, or just use it plainly as a engine.\
+### Latest Release for **Nightly**
+**a0.0.12**\
 "\
 **This is program uses TextFS version [insert version # here (etc. 0.0.1,0.0.11)] developed mainly by SoHiEarth.**\
 "\

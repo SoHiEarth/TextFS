@@ -53,6 +53,12 @@ if ImportError == True:
     print("Failed to import module:",modulename)
     print("Bye!")
 
+modulename = "time"
+import time
+if ImportError == True:
+    print("Failed to import module:",modulename)
+    print("Bye!")
+
 # Present version Info
 
 print(Program_Info.name)
@@ -226,7 +232,6 @@ tl=input("Choose your location: ")
 # Move data to Loaded
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
-os.chdir("Resources")
 aircraft_content = os.listdir("Aircraft")
 os.chdir("Aircraft")
 for craft in aircraft_content:
@@ -235,15 +240,13 @@ for craft in aircraft_content:
             movec = open(targetc_path, "r")
             moveccon = movec.read()
             movec.close()
-            os.chdir("..")
+            os.chdir(os.path.dirname(os.path.abspath(__file__)))
             os.chdir("Loaded")
             placec = open("TargetAircraft.py", "w")
             placec.write(moveccon)
             placec.close()
             break
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
-    os.chdir("..")
-    os.chdir("..")
     location_content = os.listdir("Locations")
     os.chdir("Locations")
     movelcon = ""
@@ -253,7 +256,7 @@ for craft in aircraft_content:
             movel = open(targetl_path, "r")
             movelcon = movel.read()
             movel.close()
-            os.chdir("..")
+            os.chdir(os.path.dirname(os.path.abspath(__file__)))
             os.chdir("Loaded")
             placec = open("TargetLocation.py", "w")
             placec.write(movelcon)
@@ -265,7 +268,6 @@ for craft in aircraft_content:
 virt.Read()
 virt.start()
 virt.main()
-
 
 # Start cleaning up and begin shutdown.
 
