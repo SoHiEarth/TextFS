@@ -26,12 +26,12 @@ There are **2** channels.\
 **Nightly** - This is the bleeding edge of in-development TextFS versions. It is not meant to be stable, and critical errors and bugs.
           Still, this is the one with the most feature updates and cool new stuff. If you like new stuff, try using this.
           Though, I recommend that you have a different more stable version of TextFS if you don't like seeing error messages and crashes.
-
-
-## Implementations
-If you would like to use TextFS into your program, just have a license.txt file that has the following text, and feel free to customize TextFS, or just use it plainly as a engine.
 ### Latest Release for **Nightly**
 **a0.0.12**\
+\
+## Implementations
+If you would like to use TextFS into your program, just have a license.txt file that has the following text, and feel free to customize TextFS, or just use it plainly as a engine.
+
 "\
 **This is program uses TextFS version [insert version # here (etc. 0.0.1,0.0.11)] developed mainly by SoHiEarth.**\
 "\
