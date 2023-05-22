@@ -29,7 +29,7 @@ There are **2** channels.\
 
 
 ## Implementations
-If you would like to use TextFS into your program, just have a license.txt file that has the following text, and feel free to customize TextFS, or just use it plainly as a engine.\
+If you would like to use TextFS into your program, just have a license.txt file that has the following text, and feel free to customize TextFS, or just use it plainly as a engine.
 ### Latest Release for **Nightly**
 **a0.0.12**\
 "\
