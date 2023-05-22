@@ -1,7 +1,7 @@
 # TextFS
 ## Purpose
 This is a little **Python**-made program that doesn't use graphics since I don't know how to.\
-**It will not be as accurate as X-Plane, those guys are masters**
+**It will not be as accurate as X-Plane, those guys are masters.**
 \
 **In early development, don't expect accuracy to be bang-on or anything.**
 \
