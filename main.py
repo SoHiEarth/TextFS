@@ -228,6 +228,7 @@ Process.scan("")
 # Move data to Loaded
 from loadProcess import aircraftMove,locationMove
 aircraftMove()
+
 locationMove()
 
 # Ask for world configuration
