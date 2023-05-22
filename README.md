@@ -12,7 +12,7 @@ The DATA variable is rewritten everytime the output is refreshed to **output.py*
 This is a self maintained project by SoHiEarth, and was started on May 10th, 2023. The first version was version **a0.0.1**. 
 
 ## Releases
-There are **3** channels.\
+There are **2** channels.\
 \
 **Stable** - Stable is equipped with the most stable version of TextFS. This may get the least updates (excluding stablitity and bug fixes) and features,
          as it is supposed to be the most stable and the "Long Term Support" version of TextFS.\
