@@ -1,8 +1,10 @@
 # TextFS
 ## Purpose
-This is a little **Python**-made program that doesn't use graphics since I don't know how to.
+This is a little **Python**-made program that doesn't use graphics since I don't know how to.\
 **It will not be as accurate as X-Plane, those guys are masters**
+\
 **In early development, don't expect accuracy to be bang-on or anything.**
+\
 This program can take data from a user-imported aircraft file and a location file.
 Then, it'll take the data and simulate the physics, while printing the **data** out in a user-specified repeat time.
 **In data, in the previous sentence, I meant like position data in accordance to the center of the map, and speed (velocity), vertical speed, engine throttle & power, etc.**
