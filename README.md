@@ -17,13 +17,7 @@ There are **3** channels.\
 **Stable** - Stable is equipped with the most stable version of TextFS. This may get the least updates (excluding stablitity and bug fixes) and features,
          as it is supposed to be the most stable and the "Long Term Support" version of TextFS.\
 ### Latest Release for **Stable**
-**a0.0.1** __**Not on GitHub**__
-\
-**Beta** - Beta isn't as stable as Stable, but has many new features that are from the Nightly channel,
-       which have been deemed to be stable enough to go to further testing. It can be said that this is
-       the one with the best balance between stability and features.\
-### Latest Release for **Beta**
-**b0.0.11**\
+**a0.0.1** 
 \
 **Nightly** - This is the bleeding edge of in-development TextFS versions. It is not meant to be stable, and critical errors and bugs.
           Still, this is the one with the most feature updates and cool new stuff. If you like new stuff, try using this.
