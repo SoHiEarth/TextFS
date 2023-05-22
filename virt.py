@@ -32,12 +32,24 @@ class virt:
 
 # Main game loop
 
-    def main(GravityStrength,fps = 60,ingame=False):
+    def main(fps = 60):
         import time
-
-        startframe = time.time()
-        print(startframe)
-
+        rp = True
+        while rp == True:
+            try:
+                startframe = time.time()
+                from PhysicsLibrary import World
+                World.Position(0,0,0,100,0,0,0)
+                endframe = time.time()
+                FrameTime = endframe - startframe
+                try:
+                    FrameInfo = str(FrameTime)+" <- Frame Time. "+str(1/FrameTime)+" <-  FPS"
+                except ZeroDivisionError:
+                    FrameInfo = "Cannot divide by zero."
+                print(FrameInfo) 
+            except KeyboardInterrupt:
+                print("Stopping...")
+                break
 
 # Read
     class Read:

@@ -243,7 +243,7 @@ else:
 # Start virtual world.
 virt.Read()
 virt.start()
-virt.main(GravityStrength)
+virt.main()
 
 # Start cleaning up and begin shutdown.
 
@@ -255,7 +255,7 @@ virt.main(GravityStrength)
 #        print("Stopped")
 #        break
 
-Cleanup("")
+Cleanup("") 
 
 
 # Shutdown

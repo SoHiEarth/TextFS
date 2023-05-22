@@ -9,4 +9,9 @@ class World:
     def AirResistance(A,Cd,spd,p):
         data = (p*Cd*A)/2*spd*spd
         return data
-    
+    def Position(PosX,PosY,PosZ,spd,RotX,RotY,RotZ):
+        import math
+        PosX = PosX + (spd*math.cos(RotX))
+        PosY = PosY + (spd*math.cos(RotY))
+        PosZ = PosZ + (spd*math.cos(RotZ))
+        return PosX,PosY,PosZ
