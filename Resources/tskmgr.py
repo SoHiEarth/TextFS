@@ -16,7 +16,7 @@ class tskmgr:
         if loaded_exists == True:
             loadedsize = os.path.getsize("Loaded")
         os.chdir("..")
-        FSsize = os.path.getsize("TextFS-Nightly")
+        FSsize = os.path.getsize("TextFS")
  
     def refresh():
         import os
@@ -33,7 +33,7 @@ class tskmgr:
         if loaded_exists == True:
             loadedsize = os.path.getsize("Loaded")
         os.chdir("..")
-        FSsize = os.path.getsize("TextFS-Nightly")
+        FSsize = os.path.getsize("TextFS")
         if loadedsize > 500000000:
             print("WARNING: LOADED ASSETS ARE OVER 5GB.")
 
@@ -53,7 +53,7 @@ class tskmgr:
         if loaded_exists == True:
             loadedsize = os.path.getsize("Loaded")
         os.chdir("..")
-        FSsize = os.path.getsize("TextFS-Nightly")
+        FSsize = os.path.getsize("TextFS")
         print("Disk Usage:")
         if state == "init":
             print("Flight Simulator usage (Before load):", str(FSsize))

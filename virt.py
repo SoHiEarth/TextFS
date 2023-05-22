@@ -32,10 +32,13 @@ class virt:
 
 # Main game loop
 
-    def main(fps = 60,ingame=False):
+    def main(GravityStrength,fps = 60,ingame=False):
         import time
+
         startframe = time.time()
         print(startframe)
+
+
 # Read
     class Read:
         def sread():

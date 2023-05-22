@@ -1,7 +1,7 @@
 
 # Import Modules.
 
-from Resources.virt import virt
+from virt import virt
 from Resources.about import Program_Info
 from Installer.restore import Restore
 from Resources.Boot import Opened
@@ -225,49 +225,24 @@ print("Ended boot.")
 Process.scan("")
 
 # Choose aircraft and location
-
-tc=input("Choose your aircraft: ")
-tl=input("Choose your location: ")
-
 # Move data to Loaded
+from loadProcess import aircraftMove,locationMove
+aircraftMove()
+locationMove()
 
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
-aircraft_content = os.listdir("Aircraft")
-os.chdir("Aircraft")
-for craft in aircraft_content:
-    if tc in craft:
-            targetc_path = os.path.abspath(craft)
-            movec = open(targetc_path, "r")
-            moveccon = movec.read()
-            movec.close()
-            os.chdir(os.path.dirname(os.path.abspath(__file__)))
-            os.chdir("Loaded")
-            placec = open("TargetAircraft.py", "w")
-            placec.write(moveccon)
-            placec.close()
-            break
-    os.chdir(os.path.dirname(os.path.abspath(__file__)))
-    location_content = os.listdir("Locations")
-    os.chdir("Locations")
-    movelcon = ""
-    for location in location_content:
-        if tl in location:
-            targetl_path = os.path.abspath(location)
-            movel = open(targetl_path, "r")
-            movelcon = movel.read()
-            movel.close()
-            os.chdir(os.path.dirname(os.path.abspath(__file__)))
-            os.chdir("Loaded")
-            placec = open("TargetLocation.py", "w")
-            placec.write(movelcon)
-            placec.close()
-
-            break
+# Ask for world configuration
+world_config = input("World configuration; (Blank or \"Auto\" is automatically set)")
+if world_config == "" or " " or "Auto" or "auto":
+    GravityStrength = 9.807
+else:
+    GravityStrength = input("Gravity Strength (m/s):")
+    GravityStrength = int(GravityStrength)
+    DragCoefficient = input("Drag coeffecient:")
 
 # Start virtual world.
 virt.Read()
 virt.start()
-virt.main()
+virt.main(GravityStrength)
 
 # Start cleaning up and begin shutdown.
 
