@@ -1,0 +1,5 @@
+class Data:
+    version = "a0.0.1"
+    Type = "Airport Template"
+    Language = "Visual"
+    Scale = "Foot"
