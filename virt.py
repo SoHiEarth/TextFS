@@ -47,6 +47,7 @@ class virt:
                 except ZeroDivisionError:
                     FrameInfo = "Cannot divide by zero."
                 print(FrameInfo) 
+                time.sleep(1 - (endframe - startframe))
             except KeyboardInterrupt:
                 print("Stopping...")
                 break

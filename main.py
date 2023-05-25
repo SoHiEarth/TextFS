@@ -247,14 +247,6 @@ virt.main()
 
 # Start cleaning up and begin shutdown.
 
-#f = 0
-#while f == 0:
-#    try:
-#        print("192,100,1002")
-#    except KeyboardInterrupt:
-#        print("Stopped")
-#        break
-
 Cleanup("") 
 
 
