@@ -13,8 +13,8 @@ And that someone will be able to use the data that's printed out as variable DAT
 The DATA variable is rewritten everytime the output is refreshed to **output.py** in /Output/
 
 ## Developers
-This is a self maintained project by SoHiEarth, and was started on May 10th, 2023. The first version was version **a0.0.1**. 
-
+This is a self maintained project by SoHiEarth, and was started on May 10th, 2023. The first version was version **a0.0.1**.\
+The latest version is version **a0.0.5**
 ## Releases
 There are **2** channels.\
 \
