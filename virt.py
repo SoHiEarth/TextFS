@@ -34,21 +34,17 @@ class virt:
 
     def main(fps = 60):
         import time
+        from PhysicsLibrary import FPSCounter
         rp = True
         while rp == True:
             try:
                 startframe = time.time()
                 from PhysicsLibrary import World
-                World.Position(0,0,0,100,0,0,0)
+                print(World.Position(0,0,0,100,0,0,0))
                 endframe = time.time()
-                FrameTime = endframe - startframe
-                try:
-                    FrameInfo = str(FrameTime)+" <- Frame Time. "+str(1/FrameTime)+" <-  FPS"
-                except ZeroDivisionError:
-                    FrameInfo = "Cannot divide by zero."
-                print(FrameInfo) 
-                time.sleep(1 - (endframe - startframe))
+                FPSCounter.FPSCount(startframe,endframe)
             except KeyboardInterrupt:
+                print()
                 print("Stopping...")
                 break
 

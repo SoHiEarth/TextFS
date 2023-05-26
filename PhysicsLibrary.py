@@ -1,3 +1,13 @@
+class FPSCounter:
+    def FPSCount(startframe,endframe):
+            import time
+            FrameTime = endframe - startframe
+            try:
+                FrameInfo = str(FrameTime)+" <- Frame Time. "+str(1/FrameTime)+" <-  FPS"
+            except ZeroDivisionError:
+                FrameInfo = "Cannot divide by zero."
+            print(FrameInfo) 
+            time.sleep(1 - (endframe - startframe))
 class World:
     def Gravity(Strength,State="Calc"):
         if State == "Init":

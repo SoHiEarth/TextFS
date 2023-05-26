@@ -13,10 +13,6 @@ from Resources.cleanup import Cleanup
 from Resources.setting import SafeMode
 from Resources.setting import DebugMode
 
-# Partial cleanup to remove unwanted files.
-
-Cleanup("Partial")
-
 modulename = "time"
 import time
 if ImportError == True:
@@ -246,7 +242,6 @@ virt.start()
 virt.main()
 
 # Start cleaning up and begin shutdown.
-
 Cleanup("") 
 
 
