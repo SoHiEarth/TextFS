@@ -252,22 +252,32 @@ locationMove()
 
 # Ask for world configuration
 world_config = input("World configuration; (Blank or \"Auto\" is automatically set)")
-if world_config == "" or " " or "Auto" or "auto":
+if world_config == "":
     GravityStrength = 9.807
+    arguments = []
+if world_config == " ":
+    GravityStrength = 9.807
+    arguments = []
+if world_config == "Auto":
+    GravityStrength = 9.807
+    arguments = []
+if world_config == "auto":
+    GravityStrength = 9.807
+    arguments = []
 else:
     Log("Manual World Configuration")
     GravityStrength = input("Gravity Strength (m/s):")
     Log("Gravity Strength (m/s) = "+GravityStrength)
-    GravityStrength = int(GravityStrength)
+    GravityStrength = float(GravityStrength)
     DragCoefficient = input("Drag coeffecient:")
     Log("Drag Coefficient = "+DragCoefficient)
-world_args_num = input("# of Arguments (Advanced)")
-arguments = []
-num = 0
-while num < world_args_num:
-    add_argument = input("Argument: ")
-    arguments.append(add_argument)
-    num = num + 1
+    world_args_num = input("# of Arguments (Advanced)")
+    arguments = []
+    num = 0
+    while num < int(float(world_args_num)):
+        add_argument = input("Argument: ")
+        arguments.append(add_argument)
+        num = num + 1
 
 # Start virtual world.
 Log("Starting virt.Read")
