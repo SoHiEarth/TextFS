@@ -32,14 +32,13 @@ class virt:
 
 # Main game loop
 
-    def main(fps = 60):
+    def main(fps = 60,Repeat = True):
         import time
         from PhysicsLibrary import FPSCounter
-        rp = True
-        while rp == True:
+        from PhysicsLibrary import World
+        while Repeat == True:
             try:
                 startframe = time.time()
-                from PhysicsLibrary import World
                 print(World.Position(0,0,0,100,0,0,0))
                 endframe = time.time()
                 FPSCounter.FPSCount(startframe,endframe)
@@ -47,6 +46,15 @@ class virt:
                 print()
                 print("Stopping...")
                 break
+        if Repeat == False:
+            try:
+                startframe = time.time()
+                print(World.Position(0,0,0,100,0,0,0))
+                endframe = time.time()
+                FPSCounter.FPSCount(startframe,endframe)
+            except KeyboardInterrupt:
+                print()
+                print("Stopping...")
 
 # Read
     class Read:

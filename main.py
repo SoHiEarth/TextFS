@@ -1,18 +1,6 @@
 
 # Import Modules.
 
-from virt import virt
-from Resources.about import Program_Info
-from Installer.restore import Restore
-from Resources.Boot import Opened
-if ImportError == True:
-    Restore.Restore_Boot(0)
-    from Resources.Boot import Opened
-from Resources.ec import ec
-from Resources.cleanup import Cleanup
-from Resources.setting import SafeMode
-from Resources.setting import DebugMode
-
 modulename = "time"
 import time
 if ImportError == True:
@@ -54,6 +42,21 @@ import time
 if ImportError == True:
     print("Failed to import module:",modulename)
     print("Bye!")
+
+from virt import virt
+from Resources.about import Program_Info
+from Installer.restore import Restore
+from Resources.Boot import Opened
+if ImportError == True:
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+    os.chdir("Resources")
+    Restore.Restore_Boot(0)
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+    from Resources.Boot import Opened
+from Resources.ec import ec
+from Resources.cleanup import Cleanup
+from Resources.setting import SafeMode
+from Resources.setting import DebugMode
 
 # Present version Info
 
@@ -108,11 +111,16 @@ if loc_exists == False:
 # See if this program was opened before.
 
 if Opened == 0:
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+    os.chdir("Resources")
     Restore.Restore_Boot(1)
 elif Opened == 1:
     pass
 else:
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+    os.chdir("Resources")
     Restore.Restore_Boot(1)
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 # Ask for tutorial setup, only if the program is on first startup.
 
@@ -242,8 +250,7 @@ virt.start()
 virt.main()
 
 # Start cleaning up and begin shutdown.
-Cleanup("") 
-
+Cleanup("")
 
 # Shutdown
 
