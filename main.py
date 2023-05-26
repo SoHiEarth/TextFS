@@ -263,9 +263,11 @@ else:
     Log("Drag Coefficient = "+DragCoefficient)
 world_args_num = input("# of Arguments (Advanced)")
 arguments = []
-for one in world_args_num:
+num = 0
+while num < world_args_num:
     add_argument = input("Argument: ")
     arguments.append(add_argument)
+    num = num + 1
 
 # Start virtual world.
 Log("Starting virt.Read")
