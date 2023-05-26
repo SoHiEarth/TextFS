@@ -59,6 +59,14 @@ from Resources.log import Log
 from Resources.log import Display
 from Resources.setting import SafeMode
 from Resources.setting import DebugMode
+from Installer.tutorial_craft import b738
+from Installer.tutorial_craft import b773er
+from Installer.tutorial_loc import KLAX
+from Installer.tutorial_loc import KORD
+from Installer.tutorial_loc import blank
+from Resources.tskmgr import tskmgr
+from Resources.World.process import Process
+from loadProcess import aircraftMove,locationMove
 
 # Present version Info
 
@@ -152,10 +160,8 @@ if Opened == 0:
         select_aircraft = input()
         Log("Picked aircraft "+select_aircraft+"as tutorial aircraft")
         if select_aircraft == "b738":
-            from Installer.tutorial_craft import b738
             b738()
         if select_aircraft == "b773er":
-            from Installer.tutorial_craft import b773er
             b773er()
         else:
             pass
@@ -163,19 +169,16 @@ if Opened == 0:
         select_location = input()
         Log("Picked aircraft"+select_location+"as tutorial location")
         if select_location == "KLAX":
-            from Installer.tutorial_loc import KLAX
             KLAX()
             if FileNotFoundError == True:
                 print("Failed to install "+select_location)
                 Restore.Restore_Boot(0)
         if select_location == "KORD":
-            from Installer.tutorial_loc import KORD
             KORD()
             if FileNotFoundError == True:
                 print("Failed to install "+select_location)
                 Restore.Restore_Boot(0)
         if select_location == "WHITESPACE":
-            from Installer.tutorial_loc import blank
             blank()
             if FileNotFoundError == True:
                 print("Failed to install "+select_location)
@@ -192,13 +195,11 @@ Log("Starting main bootlevel")
 
 # Start task manager
 
-from Resources.tskmgr import tskmgr
 tskmgr.start()
 tskmgr.display("init")
 
 # Scan aircraft and locations
 
-from Resources.World.process import Process
 Process.scan("quiet")
 
 # Start second bootlevel
@@ -246,7 +247,7 @@ Log("Scanned available aircraft and locations")
 
 # Choose aircraft and location
 # Move data to Loaded
-from loadProcess import aircraftMove,locationMove
+
 aircraftMove()
 locationMove()
 
