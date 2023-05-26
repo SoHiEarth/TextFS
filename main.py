@@ -261,11 +261,12 @@ else:
     GravityStrength = int(GravityStrength)
     DragCoefficient = input("Drag coeffecient:")
     Log("Drag Coefficient = "+DragCoefficient)
-world_args = input("Arguments (Advanced)")
+world_args_num = input("# of Arguments (Advanced)")
 arguments = []
-if "--tskmgr,display" in world_args:
-    arguments.append("--display:TSKMGR")
-    
+for one in world_args_num:
+    add_argument = input("Argument: ")
+    arguments.append(add_argument)
+
 # Start virtual world.
 Log("Starting virt.Read")
 virt.Read()

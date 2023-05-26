@@ -37,17 +37,15 @@ class virt:
         from PhysicsLibrary import FPSCounter
         from PhysicsLibrary import World
         from Resources.tskmgr import tskmgr
-        if "--display:TSKMGR" in args:
-            displaytskmgr = True
-        else:
-            displaytskmgr = False
         while Repeat == True:
             try:
                 startframe = time.time()
                 print(World.Position(0,0,0,100,0,0,0))
                 # Add code from here...
-                if displaytskmgr == True:
+                if "--tskmgr:DISPLAY" in args:
                     tskmgr.display()
+                if "--tskmgr:REFRESH" in args:
+                    tskmgr.refresh()
                 # To here as main game exec. code
                 endframe = time.time()
                 FPSCounter.FPSCount(startframe,endframe,fps)
