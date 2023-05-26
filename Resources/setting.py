@@ -1,2 +1,2 @@
 SafeMode = 0
-DebugMode = 1
+DebugMode = 0
