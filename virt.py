@@ -32,16 +32,25 @@ class virt:
 
 # Main game loop
 
-    def main(fps = 60,Repeat = True):
+    def main(args,fps = 60,Repeat = True):
         import time
         from PhysicsLibrary import FPSCounter
         from PhysicsLibrary import World
+        from Resources.tskmgr import tskmgr
+        if "--display:TSKMGR" in args:
+            displaytskmgr = True
+        else:
+            displaytskmgr = False
         while Repeat == True:
             try:
                 startframe = time.time()
                 print(World.Position(0,0,0,100,0,0,0))
+                # Add code from here...
+                if displaytskmgr == True:
+                    tskmgr.display()
+                # To here as main game exec. code
                 endframe = time.time()
-                FPSCounter.FPSCount(startframe,endframe)
+                FPSCounter.FPSCount(startframe,endframe,fps)
             except KeyboardInterrupt:
                 print()
                 print("Stopping...")

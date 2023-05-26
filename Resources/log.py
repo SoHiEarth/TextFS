@@ -4,6 +4,9 @@ def Log(Content,end = False):
     CurrentTime = datetime.datetime.now()
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
     os.chdir("..")
+    logsExist = os.path.exists("Logs")
+    if logsExist == False:
+        os.mkdir("Logs")
     os.chdir("Logs")
     Write = open("Log.txt","a")
     Write.write(str(CurrentTime)+" "+str(Content)+"\n")

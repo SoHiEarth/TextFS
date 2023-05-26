@@ -261,7 +261,11 @@ else:
     GravityStrength = int(GravityStrength)
     DragCoefficient = input("Drag coeffecient:")
     Log("Drag Coefficient = "+DragCoefficient)
-
+world_args = input("Arguments (Advanced)")
+arguments = []
+if "--tskmgr,display" in world_args:
+    arguments.append("--display:TSKMGR")
+    
 # Start virtual world.
 Log("Starting virt.Read")
 virt.Read()
@@ -269,7 +273,7 @@ Log("Started virt.Read")
 Log("Starting virt.Start")
 virt.start()
 Log("Started  virt.main")
-virt.main()
+virt.main(arguments)
 Log("Ended virt.main")
 
 # Start cleaning up and begin shutdown.

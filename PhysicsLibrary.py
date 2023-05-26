@@ -1,9 +1,11 @@
 class FPSCounter:
-    def FPSCount(startframe,endframe):
+    def FPSCount(startframe,endframe,targetFPS):
             import time
             FrameTime = endframe - startframe
             try:
                 FrameInfo = str(FrameTime)+" <- Frame Time. "+str(1/FrameTime)+" <-  FPS"
+                if targetFPS > (1/FrameTime):
+                    print("Under targeted framerate, which is "+targetFPS)
             except ZeroDivisionError:
                 FrameInfo = "Cannot divide by zero."
             print(FrameInfo) 
