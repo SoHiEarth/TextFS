@@ -63,10 +63,10 @@ from Installer.tutorial_craft import b773er
 from Installer.tutorial_loc import KLAX
 from Installer.tutorial_loc import KORD
 from Installer.tutorial_loc import blank
-from Resources.tskmgr import tskmgr
+from diskmgr import diskmgr
 from Resources.World.process import Process
 from loadProcess import aircraftMove,locationMove
-from Resources.console import console
+from argumentLibrary import findArg
 
 # Present version Info
 
