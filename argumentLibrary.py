@@ -1,6 +1,9 @@
+# DONT FORGET TO ADD THE COMMAND TO HERE
 commandList = ["--diskmgr:DUMP",
-               "--about:VERSION","--about:CHANNEL","--about:NAME","--about:CHANGELOG"]
+               "--about:VERSION","--about:CHANNEL","--about:NAME","--about:CHANGELOG",
+               "list:LOGS","list:CMD"]
 argsList = ["--diskmgr:DISPLAY","--diskmgr:REFRESH"]
+# Functions {
 class Program:
     def Version():
         from Resources.about import Program_Info
@@ -17,11 +20,25 @@ class Program:
         for change in Program_Info.changelog:
             print("        | "+change)
     def listCommands():
-        for command in commandList:
-            print("        | "+command)
-        for arg in argsList:
-            print("        | "+arg)
+        for item in commandList:
+            print("        | "+item)
+        for item in argsList:
+            print("        | "+item)
 class Dump:
+    def LogsDump():
+        import os
+        os.chdir(os.path.dirname(os.path.abspath(__file__)))
+        logs_exist = os.path.exists("Logs")
+        if logs_exist == False:
+            print("SysMess | Error: No Logs")
+            return 404
+        os.chdir("Logs")
+        txt = open("Log.txt","r")
+        content = txt.readlines()
+        for line in content:
+            line.replace("\n","")
+            print("LogsOut | "+line)
+        return 0
     def diskmgrDump():
         import os
         import datetime
@@ -63,15 +80,38 @@ class Dump:
         dumpStat.write("\nSize of __pycache__: "+str(cacheSize))
         Log("Size of __pycache__:"+str(cacheSize))
         Log("Ended diskmgr dump")
+class Clean:
+    def ForceClean():
+        import os
+        import shutil
+        os.chdir(os.path.dirname(os.path.abspath(__file__)))
+        pycacheExists = os.path.exists("__pycache__")
+        logsExists = os.path.exists("Logs")
+        tempExists = os.path.exists("Temp")
+        craftExists = os.path.exists("Aircraft")
+        locationsExists = os.path.exists("Locations")
+        if pycacheExists == True:
+            shutil.rmtree("__pycache__")
+        if logsExists == True:
+            shutil.rmtree("Logs")
+        if tempExists == True:
+            shutil.rmtree("Temp")
+        if craftExists == True:
+            shutil.rmtree("Aircraft")
+        if locationsExists == True:
+            shutil.rmtree("Locations")
+# }
 def findArg(consoleInput):
     args = [""]
     while consoleInput != "exit":
         if consoleInput == "/exit":
             return args
         if consoleInput in commandList:
-            # Recognize active commands
+            # Recognize active commands, append to here {
             if consoleInput == "list:CMD":
                 Program.listCommands()
+            if consoleInput == "list:LOGS":
+                Dump.LogsDump()
             if consoleInput == "--about:VERSION":
                 Program.Version()
             if consoleInput == "--about:CHANNEL":
@@ -82,6 +122,7 @@ def findArg(consoleInput):
                 Program.Changelog()
             if consoleInput == "--diskmgr:DUMP":
                 Dump.diskmgrDump()
+            # }
         if consoleInput in argsList:
             # Recognize scheduled arguments
             args.append(consoleInput)
