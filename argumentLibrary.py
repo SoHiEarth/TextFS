@@ -16,6 +16,11 @@ class Program:
         print("SysMess | Current Version: "+Program_Info.pdesc)
         for change in Program_Info.changelog:
             print("        | "+change)
+    def listCommands():
+        for command in commandList:
+            print("        | "+command)
+        for arg in argsList:
+            print("        | "+arg)
 class Dump:
     def diskmgrDump():
         import os
@@ -65,6 +70,8 @@ def findArg(consoleInput):
             return args
         if consoleInput in commandList:
             # Recognize active commands
+            if consoleInput == "list:CMD":
+                Program.listCommands()
             if consoleInput == "--about:VERSION":
                 Program.Version()
             if consoleInput == "--about:CHANNEL":
