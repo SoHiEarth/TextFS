@@ -1,0 +1,26 @@
+2023-05-27 14:21:27.560274 Starting virt.Read
+2023-05-27 14:21:27.560979 Started virt.Read
+2023-05-27 14:21:27.561618 Starting virt.Start
+2023-05-27 14:21:27.561876 Started  virt.main
+2023-05-27 14:21:31.933594 Ended virt.main
+2023-05-27 14:21:31.938655 Ended cleanup
+2023-05-27 14:21:31.938906 Program closed properly.
+2023-05-27 14:22:17.036711 Restored Boot to value "1"
+2023-05-27 14:22:25.141567 Installing tutorials
+2023-05-27 14:22:25.141920 Initializing main.py
+2023-05-27 14:22:25.141991 Starting main bootlevel
+2023-05-27 14:22:25.142283 Starting second bootlevel
+2023-05-27 14:22:25.142521 Made /Temp
+2023-05-27 14:22:25.142597 Took 0.000598907470703125 seconds to boot.
+2023-05-27 14:22:25.142650 Ended boot.
+2023-05-27 14:22:25.142747 Scanned available aircraft and locations
+2023-05-27 14:22:26.050355 Manual World Configuration
+2023-05-27 14:22:27.637770 Gravity Strength (m/s) = 9
+2023-05-27 14:22:28.529779 Drag Coefficient = 2
+2023-05-27 14:22:38.081635 Starting virt.Read
+2023-05-27 14:22:38.082400 Started virt.Read
+2023-05-27 14:22:38.083214 Starting virt.Start
+2023-05-27 14:22:38.083674 Started  virt.main
+2023-05-27 14:22:40.725040 Ended virt.main
+2023-05-27 14:22:40.728106 Ended cleanup
+2023-05-27 14:22:40.728240 Program closed properly.

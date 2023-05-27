@@ -64,10 +64,10 @@ from Installer.tutorial_craft import b773er
 from Installer.tutorial_loc import KLAX
 from Installer.tutorial_loc import KORD
 from Installer.tutorial_loc import blank
-from Resources.tskmgr import tskmgr
+from Resources.diskmgr import tskmgr
 from Resources.World.process import Process
 from loadProcess import aircraftMove,locationMove
-from Resources.console import console
+from Resources.argumentLibrary import findArg
 
 # Present version Info
 
@@ -254,7 +254,6 @@ locationMove()
 
 # Ask for world configuration
 world_config = input("World configuration; (Blank or \"Auto\" is automatically set)")
-arguments = []
 if world_config == "":
     GravityStrength = 9.807
 if world_config == " ":
@@ -271,7 +270,9 @@ else:
     GravityStrength = float(GravityStrength)
     DragCoefficient = input("Drag coeffecient:")
     Log("Drag Coefficient = "+DragCoefficient)
-    arguments = console()
+    # Console
+    consoleInput = input("Console | ")
+    args = findArg(consoleInput)
 # Start virtual world. 
 Log("Starting virt.Read")
 virt.Read()
@@ -279,7 +280,7 @@ Log("Started virt.Read")
 Log("Starting virt.Start")
 virt.start()
 Log("Started  virt.main")
-virt.main(arguments)
+virt.main(args)
 Log("Ended virt.main")
 
 # Start cleaning up and begin shutdown.

@@ -36,6 +36,8 @@ class tskmgr:
         FSsize = os.path.getsize("TextFS")
         if loadedsize > 500000000:
             print("WARNING: LOADED ASSETS ARE OVER 5GB.")
+        all = mainsize + tempsize + FSsize
+        return all
 
     def display(state="Normal"):
         import os
@@ -69,3 +71,45 @@ class tskmgr:
             if DebugMode == True:
                 print("Temp directory size: "+ str(tempsize))
                 print("Loaded assets size: "+ str(loadedsize))
+    def Dump():
+        import os
+        import datetime
+        from log import Log
+        Log("Started diskmgr dump")
+        dumpLogs = 0
+        os.chdir(os.path.dirname(os.path.abspath(__file__)))
+        os.chdir("..")
+        logsExist = os.path.exists("Logs")
+        if logsExist == False:
+            os.mkdir("Logs")
+        dumpLogs =+ logsSize
+        os.chdir("Logs")
+        dumpStat = open("diskDump.txt","a")
+        os.chdir("..")
+        mainsize = os.path.getsize("main.py")
+        dumpLogs =+ mainsize
+        temp_exists = os.path.exists("Temp")
+        if temp_exists == True:
+            tempsize = os.path.getsize("Temp")
+            dumpLogs =+ tempsize
+        loaded_exists = os.path.exists("Loaded")
+        if loaded_exists == True:
+            loadedsize = os.path.getsize("Loaded")
+            dumpLogs =+ loadedsize
+        os.chdir("..")
+        FSsize = os.path.getsize("TextFS")
+        os.chdir("TextFS")
+        dumpLogs =+ FSsize
+        os.chdir(os.path.dirname(os.path.abspath(__file__)))
+        os.chdir("..")
+        logsSize = os.path.getsize("Logs")
+        dumpLogs =+ logsSize
+        os.chdir("Logs")
+        dumpStat = open("diskDump.txt","a")
+        dumpStat.write("\nTime of dump: "+str(datetime.datetime.now()))
+        dumpStat.write("\nTotal disk usage: "+str(dumpLogs))
+        dumpStat.write("\nmain.py usage: "+str(mainsize))
+        dumpStat.write("\nTemp usage: "+str(tempsize))
+        dumpStat.write("\nSize of loaded assets: "+str(loadedsize))
+        dumpStat.write("\nEnded dump.")
+        Log("Ended diskmgr dump")
