@@ -1,4 +1,3 @@
-
 # Import Modules.
 
 modulename = "time"
@@ -232,26 +231,16 @@ aircraftMove()
 locationMove()
 
 # Ask for world configuration
-world_config = input("World configuration; (Blank or \"Auto\" is automatically set)")
-arguments = []
-if world_config == "":
-    GravityStrength = 9.807
-if world_config == " ":
-    GravityStrength = 9.807
-if world_config == "Auto":
-    GravityStrength = 9.807
-if world_config == "auto":
-    GravityStrength = 9.807
+print("World Configurator:")
+Log("Manual World Configuration")
+GravityStrength = input("Gravity Strength (m/s):")
+Log("Gravity Strength (m/s) = "+GravityStrength)
+GravityStrength = float(GravityStrength)
+DragCoefficient = input("Drag coeffecient:")
+Log("Drag Coefficient = "+DragCoefficient)
+consoleInput = input("Console | ")
+arguments = findArg(consoleInput)
 
-else:
-    Log("Manual World Configuration")
-    GravityStrength = input("Gravity Strength (m/s):")
-    Log("Gravity Strength (m/s) = "+GravityStrength)
-    GravityStrength = float(GravityStrength)
-    DragCoefficient = input("Drag coeffecient:")
-    Log("Drag Coefficient = "+DragCoefficient)
-    consoleInput = input("Console | ")
-    arguments = findArg(consoleInput)
 # Start virtual world. 
 
 Log("Starting virt.Read")
