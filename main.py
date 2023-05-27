@@ -67,6 +67,7 @@ from Installer.tutorial_loc import blank
 from Resources.tskmgr import tskmgr
 from Resources.World.process import Process
 from loadProcess import aircraftMove,locationMove
+from Resources.console import console
 
 # Present version Info
 
@@ -253,18 +254,16 @@ locationMove()
 
 # Ask for world configuration
 world_config = input("World configuration; (Blank or \"Auto\" is automatically set)")
+arguments = []
 if world_config == "":
     GravityStrength = 9.807
-    arguments = []
 if world_config == " ":
     GravityStrength = 9.807
-    arguments = []
 if world_config == "Auto":
     GravityStrength = 9.807
-    arguments = []
 if world_config == "auto":
     GravityStrength = 9.807
-    arguments = []
+
 else:
     Log("Manual World Configuration")
     GravityStrength = input("Gravity Strength (m/s):")
@@ -272,15 +271,8 @@ else:
     GravityStrength = float(GravityStrength)
     DragCoefficient = input("Drag coeffecient:")
     Log("Drag Coefficient = "+DragCoefficient)
-    world_args_num = input("# of Arguments (Advanced)")
-    arguments = []
-    num = 0
-    while num < int(float(world_args_num)):
-        add_argument = input("Argument: ")
-        arguments.append(add_argument)
-        num = num + 1
-
-# Start virtual world.
+    arguments = console()
+# Start virtual world. 
 Log("Starting virt.Read")
 virt.Read()
 Log("Started virt.Read")
