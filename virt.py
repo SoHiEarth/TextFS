@@ -36,17 +36,18 @@ class virt:
         import time
         from PhysicsLibrary import FPSCounter
         from PhysicsLibrary import World
-        from diskmgr import diskmgr
+        from Resources.tskmgr import tskmgr
         while Repeat == True:
             try:
                 startframe = time.time()
-                # Add code from here...
                 print(World.Position(0,0,0,100,0,0,0))
-                if "--diskmgr:DISPLAY" in args:
-                    diskmgr.display()
-                if "--diskmgr:REFRESH" in args:
-                    diskmgr.refresh()
+                # Add code from here...
+                if "--tskmgr:DISPLAY" in args:
+                    tskmgr.display()
+                if "--tskmgr:REFRESH" in args:
+                    tskmgr.refresh()
                 # To here as main game exec. code
+                
                 endframe = time.time()
                 FPSCounter.FPSCount(startframe,endframe,fps)
             except KeyboardInterrupt:
