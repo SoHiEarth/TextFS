@@ -4,7 +4,7 @@ commandList = ["--diskmgr:DUMP",
                "list:LOGS","list:CMD",
                "--clean:AIRCRAFT","--clean:LOCATIONS","--clean:TEMP","--clean:LOADED",
                "--shutdown:SOFT","--shutdown:FORCE","/exit"]
-argsList = ["--diskmgr:DISPLAY","--diskmgr:REFRESH",]
+argsList = ["--diskmgr:DISPLAY","--diskmgr:REFRESH","--fps:HIDE","--fps:SHOW"]
 # Functions {
 class Program:
     def SystemInfo():
@@ -195,5 +195,11 @@ def findArg(consoleInput):
             # }
         if consoleInput in argsList:
             # Recognize scheduled arguments
+            if consoleInput == "--fps:SHOW":
+                if "--fps:HIDE" in args:
+                    args = list(map(lambda obj: obj.replace("--fps:HIDE",""), args))
+            if consoleInput == "--fps:HIDE":
+                if "--fps:SHOW" in args:
+                    args = list(map(lambda obj: obj.replace("--fps:SHOW", ""), args))
             args.append(consoleInput)
         consoleInput = input("Console | ")

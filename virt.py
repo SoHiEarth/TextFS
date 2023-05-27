@@ -48,7 +48,8 @@ class virt:
 
                 # To here as main game exec. code
                 endframe = time.time()
-                FPSCounter.FPSCount(startframe,endframe,fps)
+                if "--fps:SHOW" in args:
+                    FPSCounter.FPSCount(startframe,endframe,fps)
             except KeyboardInterrupt:
                 print()
                 print("Stopping...")
