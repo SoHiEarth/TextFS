@@ -1,11 +1,14 @@
 # DONT FORGET TO ADD THE COMMAND TO HERE
 commandList = ["--diskmgr:DUMP",
-               "--about:VERSION","--about:CHANNEL","--about:NAME","--about:CHANGELOG",
+               "--about:VERSION","--about:CHANNEL","--about:NAME","--about:CHANGELOG","--about:SYSTEM",
                "list:LOGS","list:CMD",
                "--clean:AIRCRAFT","--clean:LOCATIONS","--clean:TEMP","--clean:LOADED"]
 argsList = ["--diskmgr:DISPLAY","--diskmgr:REFRESH"]
 # Functions {
 class Program:
+    def SystemInfo():
+        import platform
+        print("SysMess | Platform: "+platform.system())
     def Version():
         from Resources.about import Program_Info
         print("SysMess | Version: "+Program_Info.version)
@@ -149,6 +152,8 @@ def findArg(consoleInput):
                 Program.listCommands()
             if consoleInput == "list:LOGS":
                 Dump.LogsDump()
+            if consoleInput == "--about:SYSTEM":
+                Program.SystemInfo()
             if consoleInput == "--about:VERSION":
                 Program.Version()
             if consoleInput == "--about:CHANNEL":
