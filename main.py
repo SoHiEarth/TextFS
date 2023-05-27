@@ -64,10 +64,10 @@ from Installer.tutorial_craft import b773er
 from Installer.tutorial_loc import KLAX
 from Installer.tutorial_loc import KORD
 from Installer.tutorial_loc import blank
-from Resources.diskmgr import tskmgr
+from diskmgr import diskmgr
 from Resources.World.process import Process
 from loadProcess import aircraftMove,locationMove
-from Resources.argumentLibrary import findArg
+from argumentLibrary import findArg
 
 # Present version Info
 
@@ -196,8 +196,8 @@ Log("Starting main bootlevel")
 
 # Start task manager
 
-tskmgr.start()
-tskmgr.display("init")
+diskmgr.start()
+diskmgr.display("init")
 
 # Scan aircraft and locations
 

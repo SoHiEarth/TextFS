@@ -1,26 +1,181 @@
-2023-05-27 14:21:27.560274 Starting virt.Read
-2023-05-27 14:21:27.560979 Started virt.Read
-2023-05-27 14:21:27.561618 Starting virt.Start
-2023-05-27 14:21:27.561876 Started  virt.main
-2023-05-27 14:21:31.933594 Ended virt.main
-2023-05-27 14:21:31.938655 Ended cleanup
-2023-05-27 14:21:31.938906 Program closed properly.
-2023-05-27 14:22:17.036711 Restored Boot to value "1"
-2023-05-27 14:22:25.141567 Installing tutorials
-2023-05-27 14:22:25.141920 Initializing main.py
-2023-05-27 14:22:25.141991 Starting main bootlevel
-2023-05-27 14:22:25.142283 Starting second bootlevel
-2023-05-27 14:22:25.142521 Made /Temp
-2023-05-27 14:22:25.142597 Took 0.000598907470703125 seconds to boot.
-2023-05-27 14:22:25.142650 Ended boot.
-2023-05-27 14:22:25.142747 Scanned available aircraft and locations
-2023-05-27 14:22:26.050355 Manual World Configuration
-2023-05-27 14:22:27.637770 Gravity Strength (m/s) = 9
-2023-05-27 14:22:28.529779 Drag Coefficient = 2
-2023-05-27 14:22:38.081635 Starting virt.Read
-2023-05-27 14:22:38.082400 Started virt.Read
-2023-05-27 14:22:38.083214 Starting virt.Start
-2023-05-27 14:22:38.083674 Started  virt.main
-2023-05-27 14:22:40.725040 Ended virt.main
-2023-05-27 14:22:40.728106 Ended cleanup
-2023-05-27 14:22:40.728240 Program closed properly.
+2023-05-27 15:38:54.811630 Created /Aircraft
+2023-05-27 15:38:54.811813 Created /Locations
+2023-05-27 15:38:54.811881 Initializing main.py
+2023-05-27 15:38:54.811931 Starting main bootlevel
+2023-05-27 15:38:54.812052 Starting second bootlevel
+2023-05-27 15:38:54.812131 Made /Temp
+2023-05-27 15:38:54.812211 Made /Loaded
+2023-05-27 15:38:54.812275 Took 0.00032711029052734375 seconds to boot.
+2023-05-27 15:38:54.812314 Ended boot.
+2023-05-27 15:38:54.812391 Scanned available aircraft and locations
+2023-05-27 15:39:01.502297 Created /Locations
+2023-05-27 15:39:01.502476 Initializing main.py
+2023-05-27 15:39:01.502882 Starting main bootlevel
+2023-05-27 15:39:01.503103 Starting second bootlevel
+2023-05-27 15:39:01.503239 Made /Loaded
+2023-05-27 15:39:01.503312 Took 0.00042176246643066406 seconds to boot.
+2023-05-27 15:39:01.503368 Ended boot.
+2023-05-27 15:39:01.503513 Scanned available aircraft and locations
+2023-05-27 15:39:03.163465 Manual World Configuration
+2023-05-27 15:39:04.458160 Gravity Strength (m/s) = 2
+2023-05-27 15:39:04.967384 Drag Coefficient = 2
+2023-05-27 15:39:21.292341 Started diskmgr dump
+2023-05-27 15:41:04.811853 Initializing main.py
+2023-05-27 15:41:04.811986 Starting main bootlevel
+2023-05-27 15:41:04.812119 Starting second bootlevel
+2023-05-27 15:41:04.812176 Took 0.00018310546875 seconds to boot.
+2023-05-27 15:41:04.812213 Ended boot.
+2023-05-27 15:41:04.812290 Scanned available aircraft and locations
+2023-05-27 15:41:06.802666 Manual World Configuration
+2023-05-27 15:41:08.356101 Gravity Strength (m/s) = 1
+2023-05-27 15:41:08.901896 Drag Coefficient = 1
+2023-05-27 15:41:13.588721 Started diskmgr dump
+2023-05-27 17:39:49.722190 Initializing main.py
+2023-05-27 17:39:49.722366 Starting main bootlevel
+2023-05-27 17:39:49.722550 Starting second bootlevel
+2023-05-27 17:39:49.722638 Took 0.0002579689025878906 seconds to boot.
+2023-05-27 17:39:49.722675 Ended boot.
+2023-05-27 17:39:49.722747 Scanned available aircraft and locations
+2023-05-27 17:40:08.092086 Initializing main.py
+2023-05-27 17:40:08.092228 Starting main bootlevel
+2023-05-27 17:40:08.092400 Starting second bootlevel
+2023-05-27 17:40:08.092466 Took 0.0002319812774658203 seconds to boot.
+2023-05-27 17:40:08.092506 Ended boot.
+2023-05-27 17:40:08.092580 Scanned available aircraft and locations
+2023-05-27 17:40:22.889361 Manual World Configuration
+2023-05-27 17:40:33.461452 Gravity Strength (m/s) = 9.803
+2023-05-27 17:40:34.963253 Drag Coefficient = 2.04
+2023-05-27 17:42:02.028791 Starting virt.Read
+2023-05-27 17:42:02.029491 Started virt.Read
+2023-05-27 17:42:02.029657 Starting virt.Start
+2023-05-27 17:42:02.029797 Started  virt.main
+2023-05-27 17:42:04.755132 Ended virt.main
+2023-05-27 17:42:04.760120 Ended cleanup
+2023-05-27 17:42:04.760257 Program closed properly.
+2023-05-27 17:42:15.469720 Restored Boot to value "1"
+2023-05-27 17:42:16.660572 Installing tutorials
+2023-05-27 17:42:16.661498 Initializing main.py
+2023-05-27 17:42:16.662130 Starting main bootlevel
+2023-05-27 17:42:16.662572 Starting second bootlevel
+2023-05-27 17:42:16.662823 Made /Temp
+2023-05-27 17:42:16.662935 Took 0.0008091926574707031 seconds to boot.
+2023-05-27 17:42:16.663025 Ended boot.
+2023-05-27 17:42:16.663252 Scanned available aircraft and locations
+2023-05-27 17:42:18.585186 Manual World Configuration
+2023-05-27 17:42:19.524378 Gravity Strength (m/s) = 
+2023-05-27 17:42:21.736825 Initializing main.py
+2023-05-27 17:42:21.736913 Starting main bootlevel
+2023-05-27 17:42:21.737098 Starting second bootlevel
+2023-05-27 17:42:21.737176 Took 0.0002582073211669922 seconds to boot.
+2023-05-27 17:42:21.737217 Ended boot.
+2023-05-27 17:42:21.737306 Scanned available aircraft and locations
+2023-05-27 17:42:25.139672 Manual World Configuration
+2023-05-27 17:42:26.592897 Gravity Strength (m/s) = 20
+2023-05-27 17:42:28.393589 Drag Coefficient = 20000
+2023-05-27 17:42:38.620263 Started diskmgr dump
+2023-05-27 17:57:19.673624 Initializing main.py
+2023-05-27 17:57:19.673810 Starting main bootlevel
+2023-05-27 17:57:19.673959 Starting second bootlevel
+2023-05-27 17:57:19.674016 Took 0.0002002716064453125 seconds to boot.
+2023-05-27 17:57:19.674089 Ended boot.
+2023-05-27 17:57:19.674167 Scanned available aircraft and locations
+2023-05-27 17:57:22.511408 Manual World Configuration
+2023-05-27 17:57:24.985570 Gravity Strength (m/s) = 2
+2023-05-27 17:57:25.808320 Drag Coefficient = 2
+2023-05-27 17:57:37.558429 Started diskmgr dump
+2023-05-27 17:57:37.558885 Total disk usage: 8558
+2023-05-27 17:57:37.559264 main.py usage: 7790
+2023-05-27 17:57:37.559446 Size of resources: 320
+2023-05-27 17:57:37.559521 Size of installer: 256
+2023-05-27 17:57:37.559587 Temp usage: 64
+2023-05-27 17:57:37.559654 Size of loaded assets: 128
+2023-05-27 17:57:37.559713 Size of __pycache__:0
+2023-05-27 17:57:37.559768 Ended diskmgr dump
+2023-05-27 17:58:15.997323 Starting virt.Read
+2023-05-27 17:58:15.998674 Started virt.Read
+2023-05-27 17:58:15.998890 Starting virt.Start
+2023-05-27 17:58:15.999068 Started  virt.main
+2023-05-27 17:58:19.513365 Ended virt.main
+2023-05-27 17:58:19.520137 Ended cleanup
+2023-05-27 17:58:19.520446 Program closed properly.
+2023-05-27 17:58:21.273152 Restored Boot to value "1"
+2023-05-27 17:58:22.004119 Installing tutorials
+2023-05-27 17:58:22.004797 Initializing main.py
+2023-05-27 17:58:22.005305 Starting main bootlevel
+2023-05-27 17:58:22.005728 Starting second bootlevel
+2023-05-27 17:58:22.006007 Made /Temp
+2023-05-27 17:58:22.006149 Took 0.000827789306640625 seconds to boot.
+2023-05-27 17:58:22.006254 Ended boot.
+2023-05-27 17:58:22.006451 Scanned available aircraft and locations
+2023-05-27 17:58:23.610281 Manual World Configuration
+2023-05-27 17:58:26.201588 Gravity Strength (m/s) = 3
+2023-05-27 17:58:28.144993 Drag Coefficient = 4
+2023-05-27 17:59:12.351804 Started diskmgr dump
+2023-05-27 17:59:12.354364 Total disk usage: 8558
+2023-05-27 17:59:12.354461 main.py usage: 7790
+2023-05-27 17:59:12.354533 Size of resources: 320
+2023-05-27 17:59:12.354592 Size of installer: 256
+2023-05-27 17:59:12.354650 Temp usage: 64
+2023-05-27 17:59:12.354705 Size of loaded assets: 128
+2023-05-27 17:59:12.354759 Size of __pycache__:0
+2023-05-27 17:59:12.354811 Ended diskmgr dump
+2023-05-27 18:00:00.278796 Starting virt.Read
+2023-05-27 18:00:00.279880 Started virt.Read
+2023-05-27 18:00:00.280026 Starting virt.Start
+2023-05-27 18:00:00.280155 Started  virt.main
+2023-05-27 18:03:28.245545 Initializing main.py
+2023-05-27 18:03:28.246012 Starting main bootlevel
+2023-05-27 18:03:28.246370 Starting second bootlevel
+2023-05-27 18:03:28.246444 Took 0.0004239082336425781 seconds to boot.
+2023-05-27 18:03:28.246489 Ended boot.
+2023-05-27 18:03:28.246569 Scanned available aircraft and locations
+2023-05-27 18:03:35.134833 Manual World Configuration
+2023-05-27 18:03:36.871550 Gravity Strength (m/s) = 12
+2023-05-27 18:03:38.131101 Drag Coefficient = 2
+2023-05-27 18:04:08.400019 Started diskmgr dump
+2023-05-27 18:04:08.402101 Total disk usage: 8558
+2023-05-27 18:04:08.402221 main.py usage: 7790
+2023-05-27 18:04:08.402308 Size of resources: 320
+2023-05-27 18:04:08.402379 Size of installer: 256
+2023-05-27 18:04:08.402446 Temp usage: 64
+2023-05-27 18:04:08.402515 Size of loaded assets: 128
+2023-05-27 18:04:08.402584 Size of __pycache__:0
+2023-05-27 18:04:08.402646 Ended diskmgr dump
+2023-05-27 18:04:14.131913 Starting virt.Read
+2023-05-27 18:04:14.132565 Started virt.Read
+2023-05-27 18:04:14.132750 Starting virt.Start
+2023-05-27 18:04:14.132871 Started  virt.main
+2023-05-27 18:06:13.462091 Initializing main.py
+2023-05-27 18:06:13.462300 Starting main bootlevel
+2023-05-27 18:06:13.462458 Starting second bootlevel
+2023-05-27 18:06:13.462525 Took 0.00021910667419433594 seconds to boot.
+2023-05-27 18:06:13.462571 Ended boot.
+2023-05-27 18:06:13.462656 Scanned available aircraft and locations
+2023-05-27 18:06:15.120271 Manual World Configuration
+2023-05-27 18:06:16.834347 Gravity Strength (m/s) = 21
+2023-05-27 18:06:18.358397 Drag Coefficient = 12
+2023-05-27 18:06:40.238750 Started diskmgr dump
+2023-05-27 18:06:40.239610 Total disk usage: 8558
+2023-05-27 18:06:40.239674 main.py usage: 7790
+2023-05-27 18:06:40.239720 Size of resources: 320
+2023-05-27 18:06:40.239761 Size of installer: 256
+2023-05-27 18:06:40.240009 Temp usage: 64
+2023-05-27 18:06:40.240074 Size of loaded assets: 128
+2023-05-27 18:06:40.240216 Size of __pycache__:0
+2023-05-27 18:06:40.240274 Ended diskmgr dump
+2023-05-27 18:06:47.335070 Started diskmgr dump
+2023-05-27 18:06:47.335988 Total disk usage: 8558
+2023-05-27 18:06:47.336493 main.py usage: 7790
+2023-05-27 18:06:47.336786 Size of resources: 320
+2023-05-27 18:06:47.336897 Size of installer: 256
+2023-05-27 18:06:47.337033 Temp usage: 64
+2023-05-27 18:06:47.337129 Size of loaded assets: 128
+2023-05-27 18:06:47.337222 Size of __pycache__:0
+2023-05-27 18:06:47.337309 Ended diskmgr dump
+2023-05-27 18:07:20.484998 Starting virt.Read
+2023-05-27 18:07:20.486602 Started virt.Read
+2023-05-27 18:07:20.487161 Starting virt.Start
+2023-05-27 18:07:20.487577 Started  virt.main
+2023-05-27 18:07:24.415046 Ended virt.main
+2023-05-27 18:07:24.421380 Ended cleanup
+2023-05-27 18:07:24.421546 Program closed properly.
