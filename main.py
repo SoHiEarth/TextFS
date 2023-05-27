@@ -70,23 +70,8 @@ from argumentLibrary import findArg
 
 # Present version Info
 
-print(Program_Info.name)
 if Program_Info.channel == "Beta" or "Nightly":
     print("This is a installation of "+Program_Info.channel+"!")
-print("What's new:\n"+Program_Info.pdesc)
-if DebugMode == 1:
-    print("Changelog:\n")
-rpt = 0
-for c in Program_Info.changelog:
-    if c == "Done":
-       print("Done.")
-    else:
-        print(c+"\n")
-    rpt = rpt+1
-    if rpt == 5:
-        print("...")
-        break
-rpt = 0
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 if DebugMode == True:
