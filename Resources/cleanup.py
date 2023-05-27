@@ -2,7 +2,6 @@ def Cleanup(type):
     import os
     import shutil
     from Installer.restore import Restore
-    from Resources.setting import DebugMode
     if type == "Partial":
         os.chdir(os.path.dirname(os.path.abspath(__file__)))
         os.chdir("..")
@@ -45,6 +44,8 @@ def Cleanup(type):
         if cache_exists == True:
             shutil.rmtree("__pycache__")
         
-    print("Cleanup done.")
+    if type == "ConsoleCMD":
+        print("Cleanup | Cleanup of type \""+type+"\" complete.")
+    else: print("Cleanup complete.")
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
     Restore.Restore_Boot(0)

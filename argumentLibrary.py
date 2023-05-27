@@ -2,8 +2,9 @@
 commandList = ["--diskmgr:DUMP",
                "--about:VERSION","--about:CHANNEL","--about:NAME","--about:CHANGELOG","--about:SYSTEM",
                "list:LOGS","list:CMD",
-               "--clean:AIRCRAFT","--clean:LOCATIONS","--clean:TEMP","--clean:LOADED"]
-argsList = ["--diskmgr:DISPLAY","--diskmgr:REFRESH"]
+               "--clean:AIRCRAFT","--clean:LOCATIONS","--clean:TEMP","--clean:LOADED",
+               "--shutdown:SOFT","--shutdown:FORCE","/exit"]
+argsList = ["--diskmgr:DISPLAY","--diskmgr:REFRESH",]
 # Functions {
 class Program:
     def SystemInfo():
@@ -22,12 +23,25 @@ class Program:
         from Resources.about import Program_Info
         print("SysMess | Current Version: "+Program_Info.pdesc)
         for change in Program_Info.changelog:
-            print("        | "+change)
+            print("SysMess | "+change)
     def listCommands():
         for item in commandList:
-            print("        | "+item)
+            print("SysMess | "+item)
         for item in argsList:
-            print("        | "+item)
+            print("SysMess | "+item)
+    def forceAbort():
+        print("SysMess | Force-stopping program...")
+        from Resources.log import Log
+        Log("Force-Stopped Program using console command --shutdown:FORCE")
+        import sys
+        sys.exit(7)
+    def softAbort():
+        import os
+        import sys
+        os.chdir(os.path.dirname(os.path.abspath(__file__)))
+        from Resources.cleanup import Cleanup
+        Cleanup("ConsoleCMD")
+        sys.exit(5)
 class Dump:
     def LogsDump():
         import os
@@ -174,6 +188,10 @@ def findArg(consoleInput):
                 Clean.loadedWipe()
             if consoleInput == "--clean:TEMP":
                 Clean.tempWipe()
+            if consoleInput == "--shutdown:FORCE":
+                Program.forceAbort()
+            if consoleInput == "--shutdown:":
+                Program.softAbort()
             # }
         if consoleInput in argsList:
             # Recognize scheduled arguments
