@@ -265,7 +265,8 @@ else:
     GravityStrength = float(GravityStrength)
     DragCoefficient = input("Drag coeffecient:")
     Log("Drag Coefficient = "+DragCoefficient)
-    arguments = console()
+    consoleInput = input("Console | ")
+    arguments = findArg(consoleInput)
 # Start virtual world. 
 
 Log("Starting virt.Read")
@@ -274,7 +275,7 @@ Log("Started virt.Read")
 Log("Starting virt.Start")
 virt.start()
 Log("Started  virt.main")
-virt.main(args)
+virt.main(arguments)
 Log("Ended virt.main")
 
 # Start cleaning up and begin shutdown.

@@ -1,5 +1,21 @@
-commandList = ["--diskmgr:DUMP"]
+commandList = ["--diskmgr:DUMP",
+               "--about:VERSION","--about:CHANNEL","--about:NAME","--about:CHANGELOG"]
 argsList = ["--diskmgr:DISPLAY","--diskmgr:REFRESH"]
+class Program:
+    def Version():
+        from Resources.about import Program_Info
+        print("SysMess | Version: "+Program_Info.version)
+    def Channel():
+        from Resources.about import Program_Info
+        print("SysMess | Channel: "+Program_Info.channel)
+    def Name():
+        from Resources.about import Program_Info
+        print("SysMess | Program Name: "+Program_Info.name)
+    def Changelog():
+        from Resources.about import Program_Info
+        print("SysMess | Current Version: "+Program_Info.pdesc)
+        for change in Program_Info.changelog:
+            print("        | "+change)
 class Dump:
     def diskmgrDump():
         import os
@@ -49,6 +65,14 @@ def findArg(consoleInput):
             return args
         if consoleInput in commandList:
             # Recognize active commands
+            if consoleInput == "--about:VERSION":
+                Program.Version()
+            if consoleInput == "--about:CHANNEL":
+                Program.Channel()
+            if consoleInput == "--about:NAME":
+                Program.Name()
+            if consoleInput == "--about:CHANGELOG":
+                Program.Changelog()
             if consoleInput == "--diskmgr:DUMP":
                 Dump.diskmgrDump()
         if consoleInput in argsList:
