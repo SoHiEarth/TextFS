@@ -1,7 +1,8 @@
 # DONT FORGET TO ADD THE COMMAND TO HERE
 commandList = ["--diskmgr:DUMP",
                "--about:VERSION","--about:CHANNEL","--about:NAME","--about:CHANGELOG",
-               "list:LOGS","list:CMD"]
+               "list:LOGS","list:CMD",
+               "--clean:AIRCRAFT","--clean:LOCATIONS","--clean:TEMP","--clean:LOADED"]
 argsList = ["--diskmgr:DISPLAY","--diskmgr:REFRESH"]
 # Functions {
 class Program:
@@ -81,7 +82,43 @@ class Dump:
         Log("Size of __pycache__:"+str(cacheSize))
         Log("Ended diskmgr dump")
 class Clean:
-    def ForceClean():
+    def aircraftWipe():
+        import os
+        import shutil
+        os.chdir(os.path.dirname(os.path.abspath(__file__)))
+        craftExists = os.path.exists("Aircraft")
+        if craftExists == True:
+            shutil.rmtree("Aircraft")
+        if craftExists == False:
+            print("        | /Aircraft folder doesn't exist")
+    def loadedWipe():
+        import os
+        import shutil
+        os.chdir(os.path.dirname(os.path.abspath(__file__)))
+        loadedExists = os.path.exists("Loaded")
+        if loadedExists == True:
+            shutil.rmtree("Loaded")
+        if loadedExists == False:
+            print("        | /Loaded doesn't exist")
+    def locationWipe():
+        import os
+        import shutil
+        os.chdir(os.path.dirname(os.path.abspath(__file__)))
+        locExists = os.path.exists("Locations")
+        if locExists == True:
+            shutil.rmtree("Locations")
+        if locExists == False:
+            print("        | /Locations folder doesn't exist")
+    def tempWipe():
+        import os
+        import shutil
+        os.chdir(os.path.dirname(os.path.abspath(__file__)))
+        craftExists = os.path.exists("Temp")
+        if craftExists == True:
+            shutil.rmtree("Temp")
+        if craftExists == False:
+            print("        | /Temp folder doesn't exist")
+    def forceClean():
         import os
         import shutil
         os.chdir(os.path.dirname(os.path.abspath(__file__)))
@@ -122,6 +159,16 @@ def findArg(consoleInput):
                 Program.Changelog()
             if consoleInput == "--diskmgr:DUMP":
                 Dump.diskmgrDump()
+            if consoleInput == "--clean:FORCE":
+                Clean.forceClean()
+            if consoleInput == "--clean:AIRCRAFT":
+                Clean.aircraftWipe()
+            if consoleInput == "--clean:LOCATIONS":
+                Clean.locationWipe()
+            if consoleInput == "--clean:LOADED":
+                Clean.loadedWipe()
+            if consoleInput == "--clean:TEMP":
+                Clean.tempWipe()
             # }
         if consoleInput in argsList:
             # Recognize scheduled arguments
