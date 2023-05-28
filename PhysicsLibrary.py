@@ -5,11 +5,10 @@ class FPSCounter:
             try:
                 FrameInfo = str(FrameTime)+" <- Frame Time. "+str(1/FrameTime)+" <-  FPS"
                 if targetFPS > (1/FrameTime):
-                    print("Under targeted framerate, which is "+targetFPS)
+                    print("Under targeted framerate, which is "+str(targetFPS))
             except ZeroDivisionError:
                 FrameInfo = "Cannot divide by zero."
             print(FrameInfo) 
-            time.sleep(1 - (endframe - startframe))
 class World:
     def Gravity(Strength,State="Calc"):
         if State == "Init":

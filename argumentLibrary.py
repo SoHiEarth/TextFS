@@ -4,7 +4,7 @@ commandList = ["--diskmgr:DUMP",
                "list:LOGS","list:CMD",
                "--clean:AIRCRAFT","--clean:LOCATIONS","--clean:TEMP","--clean:LOADED",
                "--shutdown:SOFT","--shutdown:FORCE","/exit"]
-argsList = ["--diskmgr:DISPLAY","--diskmgr:REFRESH","--fps:HIDE","--fps:SHOW"]
+argsList = ["--diskmgr:DISPLAY","--diskmgr:REFRESH","--fps:HIDE","--fps:SHOW","--fps:THROTTLE","--onetime:TRUE","--onetime:FALSE"]
 # Functions {
 class Program:
     def SystemInfo():
@@ -154,14 +154,44 @@ class Clean:
             shutil.rmtree("Aircraft")
         if locationsExists == True:
             shutil.rmtree("Locations")
+class FPS:
+    def Throttle():
+        import os
+        throttleValue = input("FPSWait | Input target throttle value:\n        | ")
+        throttleValue = int(throttleValue)
+        os.chdir(os.path.dirname(os.path.abspath(__file__)))
+        os.chdir("Temp")
+        if FileNotFoundError == True:
+            print("SysMess | /Temp not found.")
+            os.mkdir("Temp")
+            os.chdir("Temp")
+        writeTemp = open("throttleCtrl.temp","w")
+        writeTemp.write(str(throttleValue))
+        writeTemp.close()
+        return throttleValue
 # }
 def findArg(consoleInput):
     args = [""]
     while consoleInput != "exit":
         if consoleInput == "/exit":
+            # Add or save before closing {
+            import os
+            os.chdir(os.path.dirname(os.path.abspath(__file__)))
+            os.chdir("Temp")
+            if FileNotFoundError == True:
+                print("SysMess | Temp not found.")
+                os.mkdir("Temp")
+                os.chdir("Temp")
+            throttleCtrl_exists = os.path.exists("throttleCtrl.temp")
+            if throttleCtrl_exists == False:
+                writeTemp = open("throttleCtrl.temp","w")
+                writeTemp.write("60")
+                writeTemp.close()
+            # }
             return args
         if consoleInput in commandList:
             # Recognize active commands, append to here {
+                # Base level program commands {
             if consoleInput == "list:CMD":
                 Program.listCommands()
             if consoleInput == "list:LOGS":
@@ -192,14 +222,26 @@ def findArg(consoleInput):
                 Program.forceAbort()
             if consoleInput == "--shutdown:":
                 Program.softAbort()
+                # }
             # }
         if consoleInput in argsList:
-            # Recognize scheduled arguments
+            # Recognize scheduled arguments {
+                # Base level program commands {
+            if consoleInput == "--fps:THROTTLE":
+                args.append("--fps:THROTTLE:"+str(FPS.Throttle()))
             if consoleInput == "--fps:SHOW":
                 if "--fps:HIDE" in args:
                     args = list(map(lambda obj: obj.replace("--fps:HIDE",""), args))
             if consoleInput == "--fps:HIDE":
                 if "--fps:SHOW" in args:
                     args = list(map(lambda obj: obj.replace("--fps:SHOW", ""), args))
+            if consoleInput == "--onetime:TRUE":
+                if "--onetime:FALSE":
+                    args = list(map(lambda obj: obj.replace("--onetime:FALSE", ""), args))
+            if consoleInput == "--onetime:FALSE":
+                if "--onetime:TRUE":
+                    args = list(map(lambda obj: obj.replace("--onetime:TRUE", ""), args))
             args.append(consoleInput)
+                # }
+            # }
         consoleInput = input("Console | ")

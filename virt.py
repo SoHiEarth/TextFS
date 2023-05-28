@@ -34,9 +34,13 @@ class virt:
 
     def main(args,fps = 60,Repeat = True):
         import time
+        import os
         from PhysicsLibrary import FPSCounter
         from PhysicsLibrary import World
         from diskmgr import diskmgr
+        throttleValue = fps
+        if "--onetime:TRUE" in args:
+            Repeat == False
         while Repeat == True:
             try:
                 startframe = time.time()
@@ -45,11 +49,17 @@ class virt:
                     diskmgr.display()
                 if "--tskmgr:REFRESH" in args:
                     diskmgr.refresh()
-
+                if "--fps:THROTTLE" in args:
+                    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+                    os.chdir("Temp")
+                    readThrottleCtrl = open("throttleCtrl.temp","r")
+                    throttleValue = int(readThrottleCtrl.read())
+                    if FileNotFoundError == True:
+                        print("SysMess | Temp not found.")
                 # To here as main game exec. code
                 endframe = time.time()
                 if "--fps:SHOW" in args:
-                    FPSCounter.FPSCount(startframe,endframe,fps)
+                    FPSCounter.FPSCount(startframe,endframe,throttleValue)
             except KeyboardInterrupt:
                 print()
                 print("Stopping...")
@@ -58,8 +68,21 @@ class virt:
             try:
                 startframe = time.time()
                 print(World.Position(0,0,0,100,0,0,0))
+                startframe = time.time()
+                print(World.Position(0,0,0,100,0,0,0))
+                if "--tskmgr:DISPLAY" in args:
+                    diskmgr.display()
+                if "--tskmgr:REFRESH" in args:
+                    diskmgr.refresh()
+                if "--fps:THROTTLE" in args:
+                    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+                    os.chdir("Temp")
+                    readThrottleCtrl = open("throttleCtrl.temp","r")
+                    throttleValue = int(readThrottleCtrl.read())
+                    if FileNotFoundError == True:
+                        print("SysMess | Temp not found.")
                 endframe = time.time()
-                FPSCounter.FPSCount(startframe,endframe)
+                FPSCounter.FPSCount(startframe,endframe,)
             except KeyboardInterrupt:
                 print()
                 print("Stopping...")

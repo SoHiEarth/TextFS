@@ -2,4 +2,4 @@
 # preferences that are not meant to be changed
 # in the later future.
 
-Opened = 1
+Opened = 0
