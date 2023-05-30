@@ -3,7 +3,7 @@ commandList = ["--diskmgr:DUMP",
                "--about:VERSION","--about:CHANNEL","--about:NAME","--about:CHANGELOG","--about:SYSTEM",
                "list:LOGS","list:CMD",
                "--clean:AIRCRAFT","--clean:LOCATIONS","--clean:TEMP","--clean:LOADED",
-               "--shutdown:SOFT","--shutdown:FORCE","/exit"]
+               "--shutdown:SOFT","--shutdown:FORCE","exit"]
 argsList = ["--diskmgr:DISPLAY","--diskmgr:REFRESH","--fps:HIDE","--fps:SHOW","--fps:THROTTLE","--onetime:TRUE","--onetime:FALSE"]
 # Functions {
 class Program:
@@ -107,7 +107,7 @@ class Clean:
         if craftExists == True:
             shutil.rmtree("Aircraft")
         if craftExists == False:
-            print("        | /Aircraft folder doesn't exist")
+            print("AirWMGR | /Aircraft folder doesn't exist")
     def loadedWipe():
         import os
         import shutil
@@ -116,7 +116,7 @@ class Clean:
         if loadedExists == True:
             shutil.rmtree("Loaded")
         if loadedExists == False:
-            print("        | /Loaded doesn't exist")
+            print("LodWMGR | /Loaded doesn't exist")
     def locationWipe():
         import os
         import shutil
@@ -125,7 +125,7 @@ class Clean:
         if locExists == True:
             shutil.rmtree("Locations")
         if locExists == False:
-            print("        | /Locations folder doesn't exist")
+            print("LocWMGR | /Locations folder doesn't exist")
     def tempWipe():
         import os
         import shutil
@@ -134,7 +134,7 @@ class Clean:
         if craftExists == True:
             shutil.rmtree("Temp")
         if craftExists == False:
-            print("        | /Temp folder doesn't exist")
+            print("TemWMGR | /Temp folder doesn't exist")
     def forceClean():
         import os
         import shutil
@@ -173,7 +173,7 @@ class FPS:
 def findArg(consoleInput):
     args = [""]
     while consoleInput != "exit":
-        if consoleInput == "/exit":
+        if consoleInput == "exit": 
             # Add or save before closing {
             import os
             os.chdir(os.path.dirname(os.path.abspath(__file__)))
@@ -244,4 +244,6 @@ def findArg(consoleInput):
             args.append(consoleInput)
                 # }
             # }
+        else:
+            print("Message | Command \""+consoleInput+"\" not found.")
         consoleInput = input("Console | ")
