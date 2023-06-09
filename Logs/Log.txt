@@ -1,16 +1,1 @@
-2023-05-30 19:54:35.278482 Created /Locations
-2023-05-30 19:54:35.278660 Initializing main.py
-2023-05-30 19:54:35.278711 Starting main bootlevel
-2023-05-30 19:54:35.278849 Starting second bootlevel
-2023-05-30 19:54:35.278940 Made /Temp
-2023-05-30 19:54:35.279021 Made /Loaded
-2023-05-30 19:54:35.279073 Took 0.00035691261291503906 seconds to boot.
-2023-05-30 19:54:35.279115 Ended boot.
-2023-05-30 19:54:35.279196 Scanned available aircraft and locations
-2023-05-30 19:54:39.254162 Manual World Configuration
-2023-05-30 19:54:40.747881 Gravity Strength (m/s) = 9
-2023-05-30 19:54:41.319408 Drag Coefficient = 2
-2023-05-30 19:55:16.548454 Starting virt.Read
-2023-05-30 19:55:16.550683 Started virt.Read
-2023-05-30 19:55:16.550879 Starting virt.Start
-2023-05-30 19:55:16.550978 Started  virt.main
+
