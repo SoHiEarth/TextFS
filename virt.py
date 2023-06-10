@@ -38,6 +38,7 @@ class virt:
         from PhysicsLibrary import FPSCounter
         from PhysicsLibrary import World
         from diskmgr import diskmgr
+        from Resouces.Log import Log
         throttleValue = fps
         if "--onetime:TRUE" in args:
             Repeat == False
@@ -61,6 +62,7 @@ class virt:
                 if "--fps:SHOW" in args:
                     FPSCounter.FPSCount(startframe,endframe,throttleValue)
             except KeyboardInterrupt:
+                Log("KeyboardInterrupt")
                 print()
                 print("Stopping...")
                 break

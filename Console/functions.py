@@ -35,6 +35,8 @@ class Program:
         from Resources.cleanup import Cleanup
         Cleanup("ConsoleCMD")
         sys.exit(5)
+    def WhatsNew():
+        print("Nothing new rn...")
 class Dump:
     def LogsDump():
         import os
