@@ -40,7 +40,7 @@ def findArg(consoleInput):
                 Program.Name()
             if consoleInput == "--about:CHANGELOG":
                 Program.Changelog()
-            if consoleInput == "--about:Whats-new":
+            if consoleInput == "--about:Whats-New":
                 Program.Whatsnew()
             if consoleInput == "--diskmgr:DUMP":
                 Dump.diskmgrDump()
