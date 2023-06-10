@@ -42,6 +42,10 @@ if ImportError == True:
     print("Failed to import module:",modulename)
     print("Bye!")
 
+encrpytion = os.path.exists("encrypt.py")
+if encrpytion == False:
+    print("Invalid program. No encrpytion found, shutting down.")
+    sys.exit(9)
 from virt import virt
 from Resources.about import Program_Info
 from Installer.restore import Restore
