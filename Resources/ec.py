@@ -1,3 +1,4 @@
+# Mostly deprecated
 class ec:
     class importe:
         importe = "Error importing required modules."

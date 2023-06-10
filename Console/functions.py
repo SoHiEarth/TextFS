@@ -1,3 +1,4 @@
+#Wasn't able to keep it DRY
 # Functions {
 class Program:
     def SystemInfo():
@@ -152,8 +153,7 @@ class Clean:
 class FPS:
     def Throttle():
         import os
-        throttleValue = input("FPSWait | Input target throttle value:\n        | ")
-        throttleValue = int(throttleValue)
+        throttleValue = int(input("FPSWait | Input target throttle value:\n        | "))
         os.chdir(os.path.dirname(os.path.abspath(__file__)))
         os.chdir("Temp")
         if FileNotFoundError == True:
