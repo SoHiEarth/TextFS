@@ -38,7 +38,7 @@ class virt:
         from PhysicsLibrary import FPSCounter
         from PhysicsLibrary import World
         from diskmgr import diskmgr
-        from Resouces.Log import Log
+        from Resources.log import Log
         throttleValue = fps
         if "--onetime:TRUE" in args:
             Repeat == False
